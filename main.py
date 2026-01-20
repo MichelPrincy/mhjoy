@@ -190,7 +190,7 @@ class TikTokTaskBot:
             
             # --- STRICT : ATTENTE 10S AVANT INTERACTION ---
             print(f"{YELLOW}⏳ Attente stricte 10s...{RESET}", flush=True)
-            await asyncio.sleep(10)
+            await asyncio.sleep(6)
 
             # ACTION
             action_lower = action.lower()
@@ -206,7 +206,7 @@ class TikTokTaskBot:
                 self.last_action_type = "LIKE"
                 print(f"{CYAN}   ❤️ Like de la vidéo...{RESET}", flush=True)
                 os.system(f"{self.adb} input tap {PAUSE_VIDEO}")
-                await asyncio.sleep(1)
+                await asyncio.sleep(3)
                 os.system(f"{self.adb} input tap {LIKE_BUTTON}")
 
             await asyncio.sleep(3)
