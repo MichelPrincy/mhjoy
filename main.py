@@ -183,14 +183,6 @@ class TikTokTaskBot:
             os.system(f"{self.adb} input tap {coord_clone}")
             await asyncio.sleep(20) # Attente chargement vidéo
 
-            # 2. Réouverture (Refresh)
-            os.system(f'{self.adb} am start -a android.intent.action.VIEW -d "{link}" -p com.waxmoon.ma.gp > /dev/null 2>&1')
-            await asyncio.sleep(5)
-            os.system(f"{self.adb} input tap {coord_clone}")
-            
-            # --- STRICT : ATTENTE 10S AVANT INTERACTION ---
-            print(f"{YELLOW}⏳ Attente stricte 10s...{RESET}", flush=True)
-            await asyncio.sleep(6)
 
             # ACTION
             action_lower = action.lower()
@@ -376,7 +368,7 @@ class TikTokTaskBot:
 ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝   
 {RESET}
 {DIM}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{RESET}
-{WHITE}🤖 BOT AUTOMATION V3.2.3 {DIM}|{RESET} {CYAN}BY MICH{RESET}
+{WHITE}🤖 BOT AUTOMATION V3.2.4 {DIM}|{RESET} {CYAN}BY MICH{RESET}
 {DIM}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{RESET}
  📱 Status ADB    : {adb_status}
  👥 Comptes        : {WHITE}{acc_count}{RESET}
