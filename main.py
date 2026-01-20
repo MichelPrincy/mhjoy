@@ -199,14 +199,14 @@ class TikTokTaskBot:
                 self.last_action_type = "FOLLOW"
                 print(f"{CYAN}   👤 Ajout en ami (Follow)...{RESET}", flush=True)
                 os.system(f"{self.adb} input swipe {SWIPE_REFRESH}")
-                await asyncio.sleep(4)
+                await asyncio.sleep(5)
                 os.system(f"{self.adb} input tap {FOLLOW_BUTTON}")
             
             else:
                 self.last_action_type = "LIKE"
                 print(f"{CYAN}   ❤️ Like de la vidéo...{RESET}", flush=True)
                 os.system(f"{self.adb} input tap {PAUSE_VIDEO}")
-                await asyncio.sleep(3)
+                await asyncio.sleep(5)
                 os.system(f"{self.adb} input tap {LIKE_BUTTON}")
 
             await asyncio.sleep(3)
@@ -378,7 +378,7 @@ class TikTokTaskBot:
 ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝   
 {RESET}
 {DIM}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{RESET}
-{WHITE}🤖 BOT AUTOMATION V3.2.1 {DIM}|{RESET} {CYAN}BY MICH{RESET}
+{WHITE}🤖 BOT AUTOMATION V3.2.2 {DIM}|{RESET} {CYAN}BY MICH{RESET}
 {DIM}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{RESET}
  📱 Status ADB    : {adb_status}
  👥 Comptes        : {WHITE}{acc_count}{RESET}
