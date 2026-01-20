@@ -349,6 +349,18 @@ class TikTokTaskBot:
         elif "too" in text or "warnings" in text:
             if text and len(text.strip()) > 0:
                 print(f"{YELLOW}⚠️ Ce compte a besoin d'être réparé : {text}{RESET}", flush=True)
+                self.get_next_active_index()
+                next_acc = self.accounts[self.index]
+            
+            # Vérification de sécurité si tout est en pause
+            if next_acc in self.paused_accounts:
+                print(f"{RED}Tous les comptes sont en pause. Arrêt temporaire.{RESET}")
+                await self.client.disconnect()
+                return
+
+            await asyncio.sleep(2)
+            print(f"\n{WHITE}🔍 Switch vers : {CYAN}{next_acc}{RESET}", flush=True)
+            await self.client.send_message(TARGET_BOT, "TikTok")
 
     # ---------- MENU PRINCIPAL ----------
     async def menu(self):
