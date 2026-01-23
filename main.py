@@ -181,7 +181,7 @@ class TikTokTaskBot:
             os.system(f'{self.adb} am start -a android.intent.action.VIEW -d "{link}" -p com.waxmoon.ma.gp > /dev/null 2>&1')
             await asyncio.sleep(5)
             os.system(f"{self.adb} input tap {coord_clone}")
-            await asyncio.sleep(15) # Attente chargement vidéo
+            await asyncio.sleep(12) # Attente chargement vidéo
 
 
             # ACTION
